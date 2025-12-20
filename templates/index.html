@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyberion Tech</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+    <!-- Background Canvas -->
+    <canvas id="background"></canvas>
+
+    <!-- Top Taskbar / Navbar -->
+    <nav class="taskbar">
+        <div class="logo">
+            <h1>Cyberion Tech</h1>
+        </div>
+        <ul class="taskbar-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#credentials">Credentials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+     
+    <!-- Header / Hero -->
+    <header class="hero">
+        <h1 data-aos="fade-up">Cyberion Tech</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Building the future of technology.</p>
+    </header>
+
+<!-- About Us Section -->
+<section id="about" class="section" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>
+        Cyberion Tech is your full-service technology solutions partner. We specialize in repairing and maintaining all types of technology—from laptops, consoles, and controllers to desktops and workstations. 
+        Our mission is to provide reliable, high-quality service for both small personal devices and large-scale setups. We focus on precision, speed, and professionalism to ensure your technology works seamlessly.
+    </p>
+    <p>
+        Whether it's troubleshooting a gaming console, repairing a laptop, setting up multiple desktops, or running structured cabling for a small office, Cyberion Tech has you covered. Our team is passionate about technology and committed to keeping your systems running at peak performance.
+    </p>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="section" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <ul>
+        <li><strong>Device Repairs:</strong> Laptops, desktops, consoles, gaming peripherals, controllers, and more.</li>
+        <li><strong>Workstation Setup:</strong> Complete small office desktop setups, switches, and peripheral integration.</li>
+        <li><strong>Cabling & Network Solutions:</strong> Ethernet cabling, network switches, Wi-Fi optimization, and structured wiring.</li>
+        <li><strong>Maintenance & Troubleshooting:</strong> System diagnostics, software troubleshooting, hardware upgrades, and performance optimization.</li>
+        <li><strong>Custom Technology Solutions:</strong> Tailored setups for home or office environments, including gaming stations, offices, and multi-device networks.</li>
+    </ul>
+</section>
+
+
+  <!-- Credentials Section -->
+<section id="credentials" class="section" data-aos="fade-up">
+    <h2>Our Credentials</h2>
+    <p>Cyberion Tech is certified and qualified to handle all your tech needs. Our founder has earned the following certifications and badges:</p>
+
+    <div class="badge-container">
+        <!-- A+ Badge -->
+        <div class="badge-item">
+            <img src="{{ url_for('static', filename='images/aplus.png') }}" alt="CompTIA A+ Badge" class="cert-badge">
+            <p>CompTIA A+ Certification</p>
+        </div>
+
+        <!-- Network+ Badge -->
+        <div class="badge-item">
+            <img src="{{ url_for('static', filename='images/networkplus.png') }}" alt="CompTIA Network+ Badge" class="cert-badge">
+            <p>CompTIA Network+ Certification</p>
+        </div>
+
+        <!-- Cyberion Tech Badge -->
+        <div class="badge-item">
+            <img src="{{ url_for('static', filename='images/cios.png') }}" alt="Cyberion Tech Badge" class="cert-badge">
+            <p>IT Operations Specialist</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact" class="section" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-envelope"></i> Email: 
+        <a href="mailto:contact.cyberiontech@gmail.com">contact.cyberiontech@gmail.com</a>
+    </p>
+    <p><i class="fas fa-phone"></i> Phone: 
+        <a href="tel:+19155394799">(915) 229-8117</a>
+    </p>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Cyberion Tech. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

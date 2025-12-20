@@ -1,0 +1,252 @@
+/* Fullscreen background canvas */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* behind everything */
+    background: transparent; /* canvas shows through */
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contact Section Links */
+#contact a {
+    color: #00e5ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    text-shadow: 0 0 5px #00e5ff, 0 0 10px #6a0dad;
+}
+
+#contact i {
+    margin-right: 10px;
+    color: #00e5ff;
+}
+
+
+#contact a:hover {
+    color: #6a0dad;
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #6a0dad;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #00e5ff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Top Taskbar */
+.taskbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    box-shadow: 0 0 15px #00e5ff, 0 0 25px #6a0dad;
+}
+
+.taskbar .logo h1 {
+    color: #00e5ff;
+    font-size: 1.8em;
+    margin: 0;
+    text-shadow: 0 0 5px #00e5ff, 0 0 10px #6a0dad;
+}
+
+.taskbar-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.taskbar-links li a {
+    text-decoration: none;
+    color: #00e5ff;
+    font-weight: bold;
+    font-size: 1.1em;
+    position: relative;
+    transition: 0.3s;
+}
+
+.taskbar-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #6a0dad;
+    bottom: -5px;
+    left: 0;
+    transition: 0.4s ease;
+    box-shadow: 0 0 5px #6a0dad, 0 0 10px #00e5ff;
+}
+
+.taskbar-links li a:hover::after,
+.taskbar-links li a.active::after {
+    width: 100%;
+}
+
+/* Hero */
+/* Hero - Fullscreen Cover */
+.hero {
+    height: 100vh; /* full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    text-align: center;
+    background: linear-gradient(90deg, #0a0a0a 50%, #6a0dad 50%);
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px; /* optional horizontal padding */
+}
+
+/* Hero heading */
+.hero h1 {
+    font-size: 6vw; /* scales with viewport width */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #6a0dad, 0 0 30px #00e5ff;
+}
+
+/* Hero paragraph */
+.hero p {
+    font-size: 2vw; /* scales with viewport width */
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #00e5ff;
+}
+
+/* Call-to-action button */
+.cta-button {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #6a0dad;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #00e5ff, 0 0 20px #6a0dad;
+}
+
+.cta-button:hover {
+    background-color: #00e5ff;
+    color: #0a0a0a;
+    box-shadow: 0 0 20px #00e5ff, 0 0 30px #6a0dad;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 10vw; /* bigger scaling for small screens */
+    }
+
+    .hero p {
+        font-size: 4vw;
+    }
+
+    .cta-button {
+        padding: 0.8em 1.5em;
+        font-size: 1em;
+    }
+}
+
+
+
+/* Sections */
+.section {
+    padding: 120px 20px 80px;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(10,10,10,0.5) 50%, rgba(26,0,51,0.5) 50%);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00e5ff, 0 0 10px #6a0dad;
+}
+
+.section p,
+.section ul {
+    font-size: 1.2em;
+    text-shadow: 0 0 2px #00e5ff;
+}
+
+.section ul li {
+    margin: 10px 0;
+}
+
+/* Credentials */
+.badge-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;       /* adjust space between badges */
+    margin-top: 20px;
+    flex-wrap: wrap; /* keeps layout responsive */
+}
+.badge-container img {
+    margin: 10px;
+}
+
+.cert-badge {
+    width: 120px;
+    height: 120px;
+    padding: 10px;          /* adds space inside the border */
+    box-sizing: border-box;  /* ensures padding doesn’t break layout */
+    object-fit: contain;
+    border: 2px solid #00e5ff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00e5ff, 0 0 25px #6a0dad;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+.cert-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00e5ff, 0 0 35px #6a0dad;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, rgba(0,31,51,0.5) 50%, rgba(106,13,173,0.5) 50%);
+    color: #fff;
+    text-shadow: 0 0 5px #00e5ff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3em; }
+    .hero p { font-size: 1.2em; }
+    .taskbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    .taskbar-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
